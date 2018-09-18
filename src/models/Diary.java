@@ -15,16 +15,10 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-@Table(name="diaries")
+@Table(name = "diaries")
 @NamedQueries({
-    @NamedQuery(
-            name="getAllDiaries",
-            query="SELECT r FROM Diary AS r ORDER BY r.id DESC"
-            ),
-    @NamedQuery(
-            name="getDiariesCount",
-            query="SELECT COUNT(r) FROM Diary AS r"
-            ),
+        @NamedQuery(name = "getAllDiaries", query = "SELECT r FROM Diary AS r ORDER BY r.id DESC"),
+        @NamedQuery(name = "getDiariesCount", query = "SELECT COUNT(r) FROM Diary AS r"),
 
 })
 @Entity
@@ -38,8 +32,8 @@ public class Diary {
     @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
-    @Column(name = "report_date", nullable = false)
-    private Date report_date;
+    @Column(name = "diary_date", nullable = false)
+    private Date diary_date;
 
     @Column(name = "title", length = 255, nullable = false)
     private String title;
@@ -47,6 +41,9 @@ public class Diary {
     @Lob
     @Column(name = "content", nullable = false)
     private String content;
+
+    @Column(name = "fixtures", nullable = false)
+    private String fixtures;
 
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
@@ -70,12 +67,12 @@ public class Diary {
         this.employee = employee;
     }
 
-    public Date getReport_date() {
-        return report_date;
+    public Date getDiary_date() {
+        return diary_date;
     }
 
-    public void setReport_date(Date report_date) {
-        this.report_date = report_date;
+    public void setDiary_date(Date diary_date) {
+        this.diary_date = diary_date;
     }
 
     public String getTitle() {
@@ -92,6 +89,14 @@ public class Diary {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getFixtures() {
+        return fixtures;
+    }
+
+    public void setFixtures(String fixtures) {
+        this.fixtures = fixtures;
     }
 
     public Timestamp getCreated_at() {

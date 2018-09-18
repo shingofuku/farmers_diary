@@ -88,3 +88,25 @@ button {
 	color: #721c24;
 	background-color:#f8d7da;
 }
+
+table#diary_list th{
+	 font-weight: bold;
+    padding: 10px 2%;
+}
+
+table#diary_list .diary_name{
+	 width: 20%;
+    padding: 10px 2%;
+}
+
+table#diary_list .diary_date{
+	width: 20%;
+}
+
+table#diary_list .diary_title{
+	width: 37%;
+}
+
+table#diary_list .diary_action{
+	width: 13%;
+}
