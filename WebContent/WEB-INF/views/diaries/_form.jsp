@@ -39,7 +39,7 @@
 
 <label for="fixtures">使用した農薬・肥料など</label>
 <br />
-<textarea name="fixtures" rows="5" cols="50">${fixtures.content}</textarea>
+<textarea name="fixtures" rows="5" cols="50">${diary.fixtures}</textarea>
 <br />
 <br />
 
