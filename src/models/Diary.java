@@ -22,7 +22,9 @@ import javax.persistence.Table;
 
 })
 @Entity
+
 public class Diary {
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -37,11 +37,21 @@
 <br />
 <br />
 
-<label for="fixtures">使用した農薬・肥料など</label>
+<label for="fixtures">使用した資材・農薬・肥料など</label>
 <br />
 <textarea name="fixtures" rows="5" cols="50">${diary.fixtures}</textarea>
 <br />
 <br />
+
+<label for="filename">ファイル名</label>
+<input type="text" name="name" value="${picture.name }"  />
+<br />
+<label for="image">画像登録</label>
+<br />
+<input type="file" name="file" value="${picture.diary_id }" />
+<br />
+<br />
+
 
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">登録</button>

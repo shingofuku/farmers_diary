@@ -4,7 +4,7 @@
     <c:param name="content">
         <h2>日誌　新規登録ページ</h2>
 
-        <form method="POST" action="<c:url value='/diaries/create' />">
+        <form method="POST" enctype="multipart/form-data" action="<c:url value='/diaries/create' />">
             <c:import url="_form.jsp" />
         </form>
 

@@ -31,6 +31,15 @@
 									<c:out value="${diary.fixtures }" />
 								</pre></td>
 						</tr>
+
+						<tr>
+							<th>登録画像</th>
+							<td><img style="width: 100px; height: 100px"
+								 src="<c:url value='/loadImage' />?id=1>" /></td>
+						</tr>
+
+
+
 						<tr>
 							<th>登録日時</th>
 							<td><fmt:formatDate value="${diary.created_at}"

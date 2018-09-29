@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Diary;
+import models.Picture;
 import utils.DBUtil;
 
 /**
@@ -36,10 +37,12 @@ public class DiariesShowServlet extends HttpServlet {
         EntityManager em = DBUtil.createEntityManager();
 
         Diary r = em.find(Diary.class, Integer.parseInt(request.getParameter("id")));
+        Picture p = em.find(Picture.class, Integer.parseInt(request.getParameter("id")));
 
         em.close();
 
         request.setAttribute("diary", r);
+        request.setAttribute("picture", p);
         request.setAttribute("_token", request.getSession().getId());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/diaries/show.jsp");
