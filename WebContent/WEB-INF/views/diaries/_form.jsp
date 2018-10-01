@@ -44,11 +44,11 @@
 <br />
 
 <label for="filename">ファイル名</label>
-<input type="text" name="name" value="${picture.name }"  />
+<input type="text" name="name"  />${picture.name }
 <br />
 <label for="image">画像登録</label>
 <br />
-<input type="file" name="file" value="${picture.diary_id }" />
+<input type="file" name="file" />${pictures.diary.id }
 <br />
 <br />
 

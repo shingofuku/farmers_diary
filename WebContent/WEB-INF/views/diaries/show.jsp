@@ -32,11 +32,21 @@
 								</pre></td>
 						</tr>
 
+
+						<c:forEach var="picture" items="${pictures }" >
 						<tr>
-							<th>登録画像</th>
-							<td><img style="width: 100px; height: 100px"
-								 src="<c:url value='/loadImage' />?id=1>" /></td>
+						<th>ファイル名</th>
+						<td><c:out value="${picture.name }" />
+						</td>
 						</tr>
+
+
+                        <tr>
+                            <th>登録画像</th>
+                            <td><img style="width: 300px; height: 300px" src= "<c:url value='/loadImage' />?id=${picture.diary.id }"/></td>
+                        </tr>
+                        </c:forEach>
+
 
 
 

@@ -1,6 +1,7 @@
 package controllers.diaries;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
@@ -30,19 +31,22 @@ public class DiariesShowServlet extends HttpServlet {
     }
 
     /**
+    
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
-
         Diary r = em.find(Diary.class, Integer.parseInt(request.getParameter("id")));
-        Picture p = em.find(Picture.class, Integer.parseInt(request.getParameter("id")));
+
+        List<Picture> pictures = em.createNamedQuery("getMyAllPictures", Picture.class)
+                .setParameter("diary", r)
+                .getResultList();
 
         em.close();
 
         request.setAttribute("diary", r);
-        request.setAttribute("picture", p);
+        request.setAttribute("pictures", pictures);
         request.setAttribute("_token", request.getSession().getId());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/diaries/show.jsp");
