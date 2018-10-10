@@ -7,6 +7,8 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>農家の日誌へようこそ</h2>
+        <div id="top-image">
+        <h2>Welcome to farmars diary</h2>
+        </div>
     </c:param>
 </c:import>

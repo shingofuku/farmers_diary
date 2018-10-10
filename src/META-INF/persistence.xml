@@ -5,6 +5,7 @@
 		<class>models.Employee</class>
 		<class>models.Diary</class>
 		<class>models.Picture</class>
+		<class>models.Calendar</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/farmers_diary?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8"/>

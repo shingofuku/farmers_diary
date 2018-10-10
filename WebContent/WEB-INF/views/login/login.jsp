@@ -12,6 +12,7 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
+        <div id="login-page">
         <h2>ログイン</h2>
         <form method="POST" action="<c:url value='/login' />">
             <label for="code">社員番号</label><br />
@@ -25,5 +26,6 @@
             <input type="hidden" name="_token" value="${_token}" />
             <button type="submit">ログイン</button>
         </form>
+        </div>
     </c:param>
 </c:import>
